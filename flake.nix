@@ -13,7 +13,7 @@
       };
 
       modules = [
-        ./configuration.nix
+        ./imports.nix
       ];
     };
   };

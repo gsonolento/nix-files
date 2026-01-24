@@ -1,21 +1,19 @@
 { pkgs, ... }:
 
 {
+  programs.dconf.enable = true;
+
   environment.variables = {
+    GTK_THEME = "WhiteSur-Dark";
+    ICON_THEME = "WhiteSur-dark";
     XCURSOR_THEME = "WhiteSur-cursors";
+    XCURSOR_SIZE = "24";
   };
 
-  gtk = {
-    enable = true;
-
-    theme = {
-      name = "WhiteSur-Dark";
-      package = pkgs.whitesur-gtk-theme;
-    };
-
-    iconTheme = {
-      name = "WhiteSur-dark";
-      package = pkgs.whitesur-icon-theme;
-    };
-  };
+  environment.systemPackages = with pkgs; [
+    whitesur-gtk-theme
+    whitesur-icon-theme
+    whitesur-cursors
+    nwg-look
+  ];
 }

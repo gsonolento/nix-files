@@ -1,4 +1,4 @@
-l{ config, ... }:
+{ config, ... }:
 
 {
   boot.loader.systemd-boot.enable = false;

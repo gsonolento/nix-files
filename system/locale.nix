@@ -30,4 +30,7 @@
 
   # Fuso horário (confirmação)
   time.timeZone = "America/Belem";
+
+  system.stateVersion = "25.11";
+
 }

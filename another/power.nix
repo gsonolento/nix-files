@@ -3,10 +3,10 @@
 {
   services.tlp = {
     enable = true;
-    settings = {
 
+    settings = {
       ####################
-      # CPU (Alder Lake)
+      # CPU – Intel Alder Lake (i5-1235U)
       ####################
       CPU_SCALING_GOVERNOR_ON_AC  = "schedutil";
       CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
@@ -21,7 +21,7 @@
       CPU_MAX_PERF_ON_BAT = 70;
 
       ####################
-      # GPU Iris Xe
+      # GPU – Intel Iris Xe
       ####################
       INTEL_GPU_MIN_FREQ_ON_AC  = 300;
       INTEL_GPU_MAX_FREQ_ON_AC  = 1200;
@@ -43,5 +43,6 @@
     };
   };
 
-  services.powertop.enable = true;
+  # NÃO misturar com powertop
+  powerManagement.enable = true;
 }

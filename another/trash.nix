@@ -1,8 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
- 
-  nix.settings.auto-optimise-store = true;
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = [ "nix-command" "flakes" ];
+  };
 
   nix.gc = {
     automatic = true;
@@ -10,16 +12,13 @@
     options = "--delete-older-than 14d";
   };
 
-programs.nh = {
-  enable = true;
-
-  clean = {
+  programs.nh = {
     enable = true;
-    extraArgs = "--keep-since 7d --keep 5";
+    clean.enable = false;
+    flake = "/etc/nixos";
   };
 
-  flake = "/etc/nixos";
-};
+  powerManagement.enable = true;
 
   zramSwap = {
     enable = true;
@@ -27,7 +26,4 @@ programs.nh = {
     algorithm = "lzo-rle";
     priority = 5;
   };
-
-
-  powerManagement.enable = true;
 }

@@ -4,7 +4,7 @@
   imports = [
     ./system/imports-sys.nix
     ./pkgs/packages.nix
-    ./another/imports-ano.nix
+    ./another/import.nix
     ./hard.nix
   ];
 }
