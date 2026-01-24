@@ -21,7 +21,10 @@
     wayland nwg-look
 
     # Arquivos / util
-    thunar xclip flameshot dunst libnotify appimage-run pear-desktop
+    thunar xclip flameshot dunst libnotify appimage-run pear-desktop  mesa
+   libGL
+   libEGL
+   glfw
 
     # Dev
     vscodium
