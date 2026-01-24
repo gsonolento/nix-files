@@ -9,7 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     # Básicos
-    nano wget git fasfetch
+    nano wget git fastfetch
 
     # Terminais
     kitty alacritty 
