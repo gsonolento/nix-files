@@ -1,15 +1,21 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+    
+
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     # Básicos
-    nano wget git pfetch
+    nano wget git fasfetch
 
     # Terminais
-    kitty alacritty foot
+    kitty alacritty 
 
     # X11
-    dmenu polybar picom slock sxhkd tint2
+    dmenu  rofi polybar picom slock sxhkd tint2
 
     # Wayland
     wayland nwg-look
