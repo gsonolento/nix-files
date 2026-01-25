@@ -15,16 +15,13 @@
     kitty alacritty 
 
     # X11
-    dmenu  rofi polybar picom slock sxhkd tint2
+    dmenu acpi rofi polybar picom slock sxhkd tint2
 
     # Wayland
     wayland nwg-look
 
     # Arquivos / util
-    thunar xclip flameshot dunst libnotify appimage-run pear-desktop  mesa
-   libGL
-   libEGL
-   glfw
+    thunar xclip flameshot dunst libnotify appimage-run pear-desktop  mesa glfw
 
     # Dev
     vscodium

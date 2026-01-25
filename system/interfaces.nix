@@ -1,16 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "modesetting" ];
 
-  services.xserver.videoDrivers = [ "modesetting" ];
-
-  services.xserver.windowManager = {
-    i3.enable = true;
-    bspwm.enable = true;
-    openbox.enable = true;
+    windowManager = {
+      bspwm.enable = true; # Desative se não for usar mais
+    };
   };
- services.displayManager.ly = {
+
+  services.displayManager.ly = {
     enable = true;
     settings = {
       animation = "matrix";
@@ -18,4 +18,13 @@
       hide_borders = false;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    rofi
+    playerctl
+    brightnessctl
+    pamixer
+    nitrogen    # Para o wallpaper
+    polybar     # Para a barra (já que o HLWM não tem)
+  ];
 }
